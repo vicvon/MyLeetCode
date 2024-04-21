@@ -15,18 +15,21 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
+    ListNode* removeNthFromEnd(ListNode* head, int n)
+    {
         ListNode dummy;
-        dummy.next = head;
-        auto delNode = findNthFromEnd(&dummy, n + 1);
+        dummy.next    = head;
+        auto delNode  = findNthFromEnd(&dummy, n + 1);
         delNode->next = delNode->next->next;
 
         return dummy.next;
     }
 
-    ListNode* findNthFromEnd(ListNode* head, int n) {
+    ListNode* findNthFromEnd(ListNode* head, int n)
+    {
         auto p1 = head;
         auto p2 = head;
         for (int i = 0; i < n; i++) {
@@ -42,4 +45,3 @@ public:
     }
 };
 // @lc code=end
-

@@ -22,11 +22,9 @@ public:
     ListNode *reverseKGroup(ListNode *head, int k)
     {
         auto p = head;
-        for (int i = 0; i < k; i++)
-        {
+        for (int i = 0; i < k; i++) {
             // 不足k个元素,不翻转
-            if (p == nullptr)
-            {
+            if (p == nullptr) {
                 return head;
             }
             p = p->next;
@@ -40,15 +38,14 @@ public:
 
     ListNode *reverseNList(ListNode *head, int n)
     {
-        if (n == 1)
-        {
+        if (n == 1) {
             node = head->next;
             return head;
         }
 
-        auto newHead = reverseNList(head->next, n - 1);
+        auto newHead     = reverseNList(head->next, n - 1);
         head->next->next = head;
-        head->next = node;
+        head->next       = node;
         return newHead;
     }
 };

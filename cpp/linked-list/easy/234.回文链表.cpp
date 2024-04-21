@@ -19,6 +19,7 @@ class Solution
 {
 public:
     ListNode *left = nullptr;
+
     bool isPalindrome(ListNode *head)
     {
         left = head;
@@ -27,14 +28,13 @@ public:
 
     bool traverse(ListNode *right)
     {
-        if (right == nullptr)
-        {
+        if (right == nullptr) {
             return true;
         }
         // 后序递归遍历
         auto res = traverse(right->next);
-        res = res && (left->val == right->val);
-        left = left->next;
+        res      = res && (left->val == right->val);
+        left     = left->next;
         return res;
     }
 };

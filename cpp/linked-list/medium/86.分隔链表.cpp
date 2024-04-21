@@ -15,21 +15,23 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* partition(ListNode* head, int x) {
+    ListNode* partition(ListNode* head, int x)
+    {
         ListNode dummy1;
         ListNode dummy2;
-        auto p = head;
-        auto p1 = &dummy1;
-        auto p2 = &dummy2;
+        auto     p  = head;
+        auto     p1 = &dummy1;
+        auto     p2 = &dummy2;
         while (p) {
             if (p->val < x) {
                 p1->next = p;
-                p1 = p1->next;
+                p1       = p1->next;
             } else {
                 p2->next = p;
-                p2 = p2->next;
+                p2       = p2->next;
             }
             p = p->next;
         }
@@ -40,4 +42,3 @@ public:
     }
 };
 // @lc code=end
-

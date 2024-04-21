@@ -15,13 +15,15 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* middleNode(ListNode* head) {
+    ListNode* middleNode(ListNode* head)
+    {
         if (head == nullptr || head->next == nullptr) {
             return head;
         }
-        
+
         auto slow = head;
         auto fast = head;
         while (fast && fast->next) {
@@ -33,4 +35,3 @@ public:
     }
 };
 // @lc code=end
-

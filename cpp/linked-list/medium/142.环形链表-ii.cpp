@@ -13,9 +13,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode *detectCycle(ListNode *head) {
+    ListNode *detectCycle(ListNode *head)
+    {
         if (head == nullptr) {
             return nullptr;
         }
@@ -44,4 +46,3 @@ public:
     }
 };
 // @lc code=end
-

@@ -23,14 +23,13 @@ public:
     {
         ListNode dummy;
         dummy.next = head;
-        auto p = head;
-        auto pre = &dummy;
-        for (int i = 1; i < left; i++)
-        {
+        auto p     = head;
+        auto pre   = &dummy;
+        for (int i = 1; i < left; i++) {
             pre = p;
-            p = p->next;
+            p   = p->next;
         }
-        auto h = reverseNList(p, right - left + 1);
+        auto h    = reverseNList(p, right - left + 1);
         pre->next = h;
 
         return dummy.next;
@@ -38,15 +37,14 @@ public:
 
     ListNode *reverseNList(ListNode *head, int n)
     {
-        if (n == 1)
-        {
+        if (n == 1) {
             node = head->next;
             return head;
         }
 
-        auto newHead = reverseNList(head->next, n - 1);
+        auto newHead     = reverseNList(head->next, n - 1);
         head->next->next = head;
-        head->next = node;
+        head->next       = node;
         return newHead;
     }
 };
